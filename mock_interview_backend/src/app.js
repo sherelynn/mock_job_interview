@@ -1,5 +1,6 @@
 const express = require("express")
 const cors = require("cors")
+const interviewRoutes = require("./routes/interviewRoutes") // Import interview routes
 
 //========== INITIALISE EXPRESS ==========//
 const app = express()
@@ -21,7 +22,7 @@ app.get("/", (req, res) => {
 })
 
 //========== MOUNT ROUTES ==========//
-// To be added later
+app.use("/api/interview", interviewRoutes) // Mount interview routes
 
 //========== NOT FOUND HANDLER ==========//
 app.use((req, res, next) => {
