@@ -1,0 +1,178 @@
+/* src/App.css */
+body {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.app-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #0b0b0b;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 40px); /* Adjust height as needed */
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  color: #e9d3d3;
+  margin-bottom: 20px;
+}
+
+.interview-setup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.interview-setup label {
+  font-weight: bold;
+  color: #890a78;
+}
+
+.interview-setup input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 80%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+.interview-setup button,
+.input-area button,
+.interview-finished button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.interview-setup button:disabled,
+.input-area button:disabled {
+  background-color: #8c00ff;
+  cursor: not-allowed;
+}
+
+.interview-setup button:hover:not(:disabled),
+.input-area button:hover:not(:disabled),
+.interview-finished button:hover {
+  background-color: #0056b3;
+}
+
+.chat-window {
+  flex-grow: 1; /* Takes up available space */
+  border: 1px solid #eee;
+  border-radius: 4px;
+  padding: 15px;
+  margin-bottom: 15px;
+  overflow-y: auto; /* Enable scrolling */
+  background-color: #f9f9f9;
+}
+
+.message {
+  margin-bottom: 12px;
+  padding: 8px 12px;
+  border-radius: 15px;
+  max-width: 80%;
+  line-height: 1.4;
+  word-wrap: break-word; /* Break long words */
+}
+
+.message strong {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.message.user {
+  background-color: #d1eaff;
+  margin-left: auto; /* Align user messages to the right */
+  border-bottom-right-radius: 5px;
+  text-align: right;
+}
+.message.user strong {
+  text-align: right;
+}
+
+.message.ai {
+  background-color: #e2e3e5;
+  margin-right: auto; /* Align AI messages to the left */
+  border-bottom-left-radius: 5px;
+  text-align: left;
+}
+.message.ai strong {
+  text-align: left;
+}
+
+.message.system {
+  background-color: #fff0f0; /* Light red background for system messages/errors */
+  border: 1px solid #e4bdbd;
+  color: #a94442;
+  text-align: center;
+  max-width: 100%;
+  font-size: 0.9em;
+}
+.message.system strong {
+  display: none; /* Hide "System:" label if desired */
+}
+
+.input-area {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start; /* Align items top */
+  border-top: 1px solid #eee;
+  padding-top: 15px;
+}
+
+.input-area textarea {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical; /* Allow vertical resize */
+  min-height: 50px; /* Minimum height */
+  font-family: inherit; /* Use the body's font */
+  box-sizing: border-box;
+}
+
+.error-message {
+  color: #d9534f; /* Red color for errors */
+  font-size: 0.9em;
+  margin-top: 5px;
+  text-align: center;
+  width: 100%; /* Make it span width in setup */
+}
+
+.error-message.below-input {
+  text-align: left;
+  margin-top: 0; /* Reset margin */
+  position: absolute; /* Position relative to form? Needs adjustment */
+  bottom: -20px; /* Place below the input area */
+  left: 0;
+}
+
+.interview-finished {
+  text-align: center;
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #dff0d8; /* Light green background */
+  border: 1px solid #c3e6cb;
+  border-radius: 4px;
+  color: #3c763d;
+}
+.interview-finished p {
+  margin-bottom: 15px;
+}
