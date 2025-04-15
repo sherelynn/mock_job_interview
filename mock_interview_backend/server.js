@@ -12,7 +12,7 @@ if (!config.geminiApiKey) {
 
 //========== PORT ==========//
 
-const PORT = config.port
+const PORT = config.port || 3001
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhostL:${PORT}`)
